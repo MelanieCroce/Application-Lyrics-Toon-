@@ -1,5 +1,9 @@
-.ion-nav-bouton{
-    height:50px;
-    width:50px
-    background-color:blue;
-}/* Empty. Add your own CSS if you like */
+ion-content{
+    margin-top:300px;
+    margin-left: 10px;
+    margin-right:10px;
+
+}
+.button-block button{
+    background-color:darkred;
+}
