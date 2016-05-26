@@ -1,9 +1,37 @@
 ion-content{
-    margin-top:300px;
+    margin-top:70px!important;
     margin-left: 10px;
     margin-right:10px;
 
 }
-.button-block button{
-    background-color:darkred;
+
+#button1{
+    background-color: #8c6c55;
+    color:white;
+    text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
+}
+#button2{
+    background-color:#efb9e9;
+    color:white;
+    text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
+}
+
+#button3{
+    background-color:#badcac;
+    color:white;
+    text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
+}
+
+#button4{
+    background-color:#f2ef83;
+    background-repeat:inherit;
+    color:white;
+    text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
+}
+#bar{
+    background-color:#82b8f6;
+}
+
+#search{
+    text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e;
 }
