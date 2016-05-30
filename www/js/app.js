@@ -38,13 +38,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: 'templates/video.html'
   })
 
-      . state('result',{
+      .state('result',{
         url: '/result',
         abstract:true,
         templateUrl:'templates/result.html'
       })
-
-
+      .state('categorie',{
+          url:'/categorie',
+          abstract: true,
+          templateUrl:'templates/categorie.html'
+      })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
