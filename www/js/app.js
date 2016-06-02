@@ -34,21 +34,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // setup an abstract state for the tabs directive
     .state('video', {
     url: '/video',
-    abstract: true,
-    templateUrl: 'templates/video.html'
-  })
+        templateUrl: 'Templates/video.html',
+        controller:'VideoCtrl'
 
-      .state('result',{
-        url: '/result',
-        abstract:true,
-        templateUrl:'templates/result.html'
+  })
+      .state('accueil', {
+          url: '/accueil',
+          templateUrl: 'Templates/accueil.html'
+
+      })
+
+      .state('restult',{
+        url: '/restult',
+        templateUrl:'templates/restult.html'
       })
       .state('categorie',{
           url:'/categorie',
-          abstract: true,
-          templateUrl:'templates/categorie.html'
+          templateUrl:'Templates/categorie.html'
       })
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/accueil');
 
 });
