@@ -1,5 +1,18 @@
 <ion-view>
     <ion-content>
-        <p>Bonjour Restult</p>
+		<div class="col-sm-6 col-sm-offset-3">
+				<div>
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="videos in videos.video">
+						<h5>{{ videos.title }}</h5>
+						<h5>{{videos.url}}</h5>
+					</li>
+				</ul>
+				<div class="alert alert-danger" ng-if="videos.error">
+					<strong>There was an error: </strong> {{video.error}}
+					<br>Please go back and login again...
+				</div>
+			</div>
+		</div>
     </ion-content>
 </ion-view>

@@ -46,7 +46,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
       .state('restult',{
         url: '/restult',
-        templateUrl:'templates/restult.html'
+        templateUrl:'templates/restult.html',
+	  	controller:'RestultCtrl'
+	  
       })
       .state('categorie',{
           url:'/categorie',
