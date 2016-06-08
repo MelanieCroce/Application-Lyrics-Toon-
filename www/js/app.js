@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       })
 
       .state('restult',{
-        url: '/restult',
+        url: '/restult?tag',
         templateUrl:'templates/restult.html',
 	  	controller:'RestultCtrl'
 	  

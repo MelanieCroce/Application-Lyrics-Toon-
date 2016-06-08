@@ -3,9 +3,9 @@
 		<div class="col-sm-6 col-sm-offset-3">
 				<div>
 				<ul class="list-group">
-					<li class="list-group-item" ng-repeat="videos in videos.video">
+					<li class="list-group-item" ng-repeat="videos in videos">
 						<h5>{{ videos.title }}</h5>
-						<h5>{{videos.url}}</h5>
+						<h5>{{ videos.url }}</h5>
 					</li>
 				</ul>
 				<div class="alert alert-danger" ng-if="videos.error">

@@ -2,7 +2,9 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-    .controller('VideoCtrl', function($scope) {
+
+
+    .controller('VideoCtrl', function($scope, $http, $sce) {
 	$scope.videos = [];
 	$scope.error;
 	$scope.video;
@@ -14,9 +16,10 @@ angular.module('starter.controllers', [])
                     method: "GET",
                     params: {page: $scope.lastpage}
                 }).success(function(videos) {
+				   $sce.getTrustedResourceUrl(videos.data.url);
                     $scope.videos = videos.data;
                     $scope.currentpage = videos.current_page;
-				   	console.log(videos)
+				   	console.log(videos.data.url)
                 });
  	}
 
@@ -40,25 +43,31 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('RestultCtrl', function($scope,$http) {
+.controller('RestultCtrl', function($scope,$http, $stateParams) {
   
 	$scope.videos = [];
 	$scope.error;
 	$scope.video;
-	$scope.lastpage=1;
 	
 	$scope.init = function() {
                $http({
-                    url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos',
+                    url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/restult/'+$stateParams.tag,
                     method: "GET",
-                    params: {page: $scope.lastpage}
                 }).success(function(videos) {
-                    $scope.videos = videos.data;
-                    $scope.currentpage = videos.current_page;
+                    $scope.videos = videos;
 				   	console.log(videos)
                 });
  	}
 
   $scope.init();
  
+});
+
+angular.module('myApp', []).config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    // Allow same origin resource loads.
+    'self',
+    // Allow loading from our assets domain.  Notice the difference between * and **.
+    'http://youtube.com/**'
+  ]);
 });
