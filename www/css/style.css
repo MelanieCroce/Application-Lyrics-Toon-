@@ -35,3 +35,8 @@ ion-content{
 #search{
     text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e;
 }
+
+object{
+    width=100%;
+    height=50%;
+}

@@ -2,9 +2,13 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
+<<<<<<< Updated upstream
 
 
     .controller('VideoCtrl', function($scope, $http, $sce) {
+=======
+    .controller('VideoCtrl', function($scope, $http) {
+>>>>>>> Stashed changes
 	$scope.videos = [];
 	$scope.error;
 	$scope.video;
@@ -18,6 +22,7 @@ angular.module('starter.controllers', [])
                 }).success(function(videos) {
 				   $sce.getTrustedResourceUrl(videos.data.url);
                     $scope.videos = videos.data;
+                    console.log(videos.data.url);
                     $scope.currentpage = videos.current_page;
 				   	console.log(videos.data.url)
                 });
