@@ -1,59 +1,17 @@
-<<<<<<< Updated upstream
-=======
-<!--<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
 
-
-    &lt;!&ndash; compiled css output &ndash;&gt;
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/ionic.app.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    &lt;!&ndash; ionic/angularjs js &ndash;&gt;
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    &lt;!&ndash; cordova script (this will be a 404 during development) &ndash;&gt;
-    <script src="cordova.js"></script>
-
-    &lt;!&ndash; your app's js &ndash;&gt;
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
-</head>
-<body ng-app="starter">
-
-
-
-<div id="bar"class="bar bar-header">
-
-    <label class="item item-input">
-        <i  class="icon ion-ios-search placeholder-icon"></i>
-        <input type="text" placeholder="Search">
-    </label>
-{{videos.url}}
-</div>-->
->>>>>>> Stashed changes
 <ion-view>
     <ion-content>
         <div class="row" ng-model="videos.video">
-            <div class="col-xs-2">
-            </div>
-            <div class="col-xs-8">
-                <object type="application/x-shockwave-flash" width="640" height="390" data="{{videos.url}}">
+            <div class="embed-responsive embed-responsive-16by9">
+                <object class="embed-responsive-item" type="application/x-shockwave-flash" width="450" height="300" data="{{videos.url}}">
                     <param name="movie" value="{{videos.url}}" />
                     <param name="wmode" value="transparent" />
                 </object>
-
-                <p>{{videos.title}}</p>
-
             </div>
-            <div class="col-xs-2">
-
-            </div>
+        </div>
+        <p>{{videos.title}}</p>
+        <div class="lyrics">
+            <p>{{videos.lyric}}</p>
         </div>
     </ion-content>
 </ion-view>

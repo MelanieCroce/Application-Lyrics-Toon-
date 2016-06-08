@@ -2,35 +2,28 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-<<<<<<< Updated upstream
-
-
-    .controller('VideoCtrl', function($scope, $http, $sce) {
-=======
     .controller('VideoCtrl', function($scope, $http) {
->>>>>>> Stashed changes
 	$scope.videos = [];
 	$scope.error;
 	$scope.video;
 	$scope.lastpage=1;
-	
+
 	$scope.init = function() {
                $http({
                     url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos/1',
                     method: "GET",
                     params: {page: $scope.lastpage}
                 }).success(function(videos) {
-				   $sce.getTrustedResourceUrl(videos.data.url);
                     $scope.videos = videos.data;
                     console.log(videos.data.url);
                     $scope.currentpage = videos.current_page;
-				   	console.log(videos.data.url)
+				   	console.log(videos)
                 });
  	}
 
-  $scope.init();	
-	
-	
+  $scope.init();
+
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -48,31 +41,25 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('RestultCtrl', function($scope,$http, $stateParams) {
-  
+.controller('RestultCtrl', function($scope,$http) {
+
 	$scope.videos = [];
 	$scope.error;
 	$scope.video;
-	
+	$scope.lastpage=1;
+
 	$scope.init = function() {
                $http({
-                    url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/restult/'+$stateParams.tag,
+                    url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos',
                     method: "GET",
+                    params: {page: $scope.lastpage}
                 }).success(function(videos) {
-                    $scope.videos = videos;
+                    $scope.videos = videos.data;
+                    $scope.currentpage = videos.current_page;
 				   	console.log(videos)
                 });
  	}
 
   $scope.init();
- 
-});
 
-angular.module('myApp', []).config(function($sceDelegateProvider) {
-  $sceDelegateProvider.resourceUrlWhitelist([
-    // Allow same origin resource loads.
-    'self',
-    // Allow loading from our assets domain.  Notice the difference between * and **.
-    'http://youtube.com/**'
-  ]);
 });
