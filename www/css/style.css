@@ -1,12 +1,48 @@
 ion-content{
     margin-top:44px!important;
-
-
 }
 
+
+.scroll-content {
+    padding: 0px;
+    margin: 0px
+}
+
+a {
+    text-decoration: none!important;
+}
+
+/***************************
+
+	BARRE DE NAVIG
+
+***************************/
+
+#bar{
+    background-color:#82b8f6;
+}
+
+#search{
+    text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e;
+}
+
+.bar-search {
+    background: transparent!important;
+    border: none;
+    color: white;
+    width: 100%;
+}
+
+
+/***************************
+
+	PAGE D ACCUEIL
+
+***************************/
+
 #button1{
+    background-image: url('../img/titre-aventure.jpg');
     background-color: #8c6c55;
-    color:white;
     text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
 }
 #button2{
@@ -27,15 +63,26 @@ ion-content{
     color:white;
     text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
 }
-#bar{
-    background-color:#82b8f6;
+
+.button {
+    min-height: 50px!important;
+    padding: 40px 0px!important;
+    color:white;
+    text-transform: uppercase;
+    font-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-#search{
-    text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e;
-}
+/***************************
+
+		PAGE VIDEOS
+
+***************************/
 
 .video {
+    margin-left:-5px!important;
     width:100%;
     height:0;
     padding-bottom: 56.25%;
@@ -46,8 +93,8 @@ ion-content{
 }
 .video object{
 
-margin-left:0px!important;
-width: 100%; height:100%;
+    margin-left:0px!important;
+    width: 100%; height:100%;
     position:absolute;
     top:0; left:0;
 
@@ -58,6 +105,7 @@ width: 100%; height:100%;
     margin-top:5%;
     overflow:auto;
     margin-left:10px;
+    font-family:Arista bold;
 }
 .title{
     margin-top:59%;
