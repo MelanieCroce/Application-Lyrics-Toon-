@@ -35,7 +35,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // setup an abstract state for the tabs directive
     .state('video', {
-    url: '/video',
+    url: '/video?id',
         templateUrl: 'Templates/video.html',
         controller:'VideoCtrl'
 

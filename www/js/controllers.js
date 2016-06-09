@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-    .controller('VideoCtrl', function($scope, $http) {
+    .controller('VideoCtrl', function($scope, $http, $stateParams) {
 	$scope.videos = [];
 	$scope.error;
 	$scope.video;
@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
 
 	$scope.init = function() {
                $http({
-                    url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos/1',
+                    url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos/'+$stateParams.id,
                     method: "GET",
                     params: {page: $scope.lastpage}
                 }).success(function(videos) {
@@ -22,44 +22,24 @@ angular.module('starter.controllers', [])
  	}
 
   $scope.init();
-
-
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+.controller('RestultCtrl', function($scope,$http, $stateParams) {
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
+		$scope.videos = [];
+		$scope.error;
+		$scope.video;
 
-.controller('RestultCtrl', function($scope,$http) {
+		$scope.init = function() {
+				   $http({
+						url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/restult/'+$stateParams.tag,
+						method: "GET",
+					}).success(function(videos) {
+						$scope.videos = videos;
+						console.log(videos)
+					});
+		}
 
-	$scope.videos = [];
-	$scope.error;
-	$scope.video;
-	$scope.lastpage=1;
+	  $scope.init();
 
-	$scope.init = function() {
-               $http({
-                    url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos',
-                    method: "GET",
-                    params: {page: $scope.lastpage}
-                }).success(function(videos) {
-                    $scope.videos = videos.data;
-                    $scope.currentpage = videos.current_page;
-				   	console.log(videos)
-                });
- 	}
-
-  $scope.init();
-
-});
+	});
