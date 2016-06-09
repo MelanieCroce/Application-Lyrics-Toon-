@@ -109,9 +109,10 @@ input[placeholder] {
     margin-top:5%;
     overflow:auto;
     margin-left:10px;
-    font-family:Arista bold;
+    font-family:'Muli', cursive;
 }
 .title{
     margin-top:59%;
     margin-left:10px;
+    font-family:'handlee', bold;
 }
