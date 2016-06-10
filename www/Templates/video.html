@@ -3,8 +3,9 @@
     <ion-content>
         <div class="row" ng-model="videos.video">
 			<div ng-bind-html="mail.htmlbody"></div>
-            <div class="video">
-				 <iframe src="{{videos.url}}" frameborder="0" width="560" height="315"></iframe>
+            <div class="">
+                    <iframe ng-src="{{ videos.url | trustAsResourceUrl }}" frameborder="0" class="video"></iframe>
+		
             </div>
         </div>
         <div class="title">

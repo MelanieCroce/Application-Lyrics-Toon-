@@ -1,8 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $sce) {})
 
-    .controller('VideoCtrl', function($scope, $http, $stateParams) {
+    .controller('VideoCtrl', function($scope, $http, $stateParams, $sce) {
 	$scope.videos = [];
 	$scope.error;
 	$scope.video;
@@ -13,16 +13,23 @@ angular.module('starter.controllers', [])
                     url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos/'+$stateParams.id,
                     method: "GET",
                     params: {page: $scope.lastpage}
-                }).success(function(videos, $machin) {
+                }).success(function(videos) {
                     $scope.videos = videos.data;
-                    $machin = videos.data.url;
+				   	$scope.videoUrl = $sce.trustAsResourceUrl(videos.data.url);
                     $scope.currentpage = videos.current_page;
-				   	console.log(videos)
+				   	console.log($scope.videoUrl)
                 });
+		 
  	}
 
   $scope.init();
 })
+
+.filter('trustAsResourceUrl', ['$sce', function($sce) {
+    return function(val) {
+        return $sce.trustAsResourceUrl(val);
+	}
+}])
 
 .controller('CategorieCtrl', function($scope,$http, $stateParams) {
 
