@@ -13,9 +13,9 @@ angular.module('starter.controllers', [])
                     url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos/'+$stateParams.id,
                     method: "GET",
                     params: {page: $scope.lastpage}
-                }).success(function(videos) {
+                }).success(function(videos, $machin) {
                     $scope.videos = videos.data;
-                    console.log(videos.data.url);
+                    $machin = videos.data.url;
                     $scope.currentpage = videos.current_page;
 				   	console.log(videos)
                 });
@@ -24,7 +24,7 @@ angular.module('starter.controllers', [])
   $scope.init();
 })
 
-.controller('RestultCtrl', function($scope,$http, $stateParams) {
+.controller('CategorieCtrl', function($scope,$http, $stateParams) {
 
 		$scope.videos = [];
 		$scope.error;

@@ -4,7 +4,8 @@
 				<div>
 				<ul class="list-group">
 					<li class="list-group-item" ng-repeat="videos in videos">
-						<h5><a href="/#/video?id={{ videos.id }}">{{ videos.title }}</a></h5>
+						<h5 class="titre-cat"><a href="/#/video?id={{ videos.id }}">{{ videos.title }}</a></h5>
+						<img src="{{ videos.id }}.jpg" />
 					</li>
 				</ul>
 				<div class="alert alert-danger" ng-if="videos.error">

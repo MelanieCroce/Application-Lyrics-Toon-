@@ -23,6 +23,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
+.config(function ($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
+})
+
 .config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
 
     $sceDelegateProvider.resourceUrlWhitelist(['^(?:http(?:s)?:\/\/)?(?:[^\.]+\.)?\(vimeo|youtube)\.com(/.*)?$', 'self']);
@@ -49,12 +53,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       .state('restult',{
         url: '/restult?tag',
         templateUrl:'templates/restult.html',
-	  	controller:'RestultCtrl'
 	  
       })
       .state('categorie',{
-          url:'/categorie',
-          templateUrl:'Templates/categorie.html'
+          url:'/categorie/:tag',
+          templateUrl:'Templates/categorie.html',
+	  		controller:'CategorieCtrl'
       })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/accueil');

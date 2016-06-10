@@ -2,18 +2,16 @@
 <ion-view>
     <ion-content>
         <div class="row" ng-model="videos.video">
+			<div ng-bind-html="mail.htmlbody"></div>
             <div class="video">
-                <object class="embed-responsive-item" type="application/x-shockwave-flash"  data="{{videos.url}}">
-                    <param name="movie" value="{{videos.url}}" />
-                    <param name="wmode" value="transparent" />
-                </object>
+				 <iframe src="{{videos.url}}" frameborder="0" width="560" height="315"></iframe>
             </div>
         </div>
         <div class="title">
             <p>{{videos.title}}</p>
         </div>
         <div class="lyrics">
-            <p>{{videos.lyric}}</p>
+            <pre>{{ videos.lyric }}</pre>
         </div>
     </ion-content>
 </ion-view>

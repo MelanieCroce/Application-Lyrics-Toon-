@@ -1,24 +1,27 @@
 <ion-view>
     <ion-content>
-		<a href="/#/restult?tag=aventure">
-			<button id="button1" class="button button-block button 1">
-				Aventure
-			</button>
-		</a>
-		<a href="/#/restult?tag=princesse">
-			<button id="button2" class="button button-block button">
-				Princesse
-			</button>
-		</a>
-		<a href="/#/restult?tag=animaux">
-			<button id="button3" class="button button-block button">
-				Animalier
-			</button>
-		</a>
-		<a href="/#/restult?tag=enfant">		
-			<button id="button4" class=" button button-block button">
-				Enfants
-			</button>
-		</a>
+		<div data-tap-disabled="true">
+		<h1 id="accueil">Catégories des videos</h1>
+			<a ui-sref="categorie({tag : 'aventure' })">
+				<button id="button1" class="button button-block button 1">
+					Aventure
+				</button>
+			</a>
+			<a ui-sref="categorie({tag : 'princesse' })">
+				<button id="button2" class="button button-block button">
+					Princesse
+				</button>
+			</a>
+			<a ui-sref="categorie({tag : 'animaux' })">
+				<button id="button3" class="button button-block button">
+					Animalier
+				</button>
+			</a>
+			<a ui-sref="categorie({tag : 'enfant' })">		
+				<button id="button4" class=" button button-block button">
+					Enfants
+				</button>
+			</a>
+		</div>
     </ion-content>
 </ion-view>

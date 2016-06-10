@@ -20,6 +20,8 @@ a {
 
 #bar{
     background-color:#273340;
+    border: none;
+    box-shadow: 0px 1px 8px black;
 }
 
 #search{
@@ -43,6 +45,16 @@ input[placeholder] {
 	PAGE D ACCUEIL
 
 ***************************/
+
+h1#accueil {
+    background: #497fa1;
+    margin: 0;
+    text-align: center;
+    font-size: 1.9em;
+    padding: 5px 0px;
+    text-transform: uppercase;
+    color: white;
+}
 
 #button1{
     background-image: url('../img/titre-aventure.jpg');
@@ -80,6 +92,26 @@ input[placeholder] {
     background-position: center;
     background-size: cover;
 	margin: 0!important;
+	   border-radius: 0px;
+}
+
+/***************************
+
+		PAGE CATEGORIE
+
+***************************/
+
+.titre-cat {
+	display: inline-block;
+	vertical-align: top;
+	width: 48%;
+	text-align: center;
+}
+
+.img-cat {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;	
 }
 
 /***************************
@@ -108,8 +140,8 @@ input[placeholder] {
 }
 
 .lyrics{
-    height:400px;
-    margin-top:5%;
+    height:355px;
+    margin-top:0px;
     overflow:auto;
     margin-left:10px;
     font-family:'Muli', cursive;
