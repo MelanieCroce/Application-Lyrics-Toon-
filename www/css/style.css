@@ -19,7 +19,7 @@ a {
 ***************************/
 
 #bar{
-    background-color:#82b8f6;
+    background-color:#273340;
 }
 
 #search{
@@ -50,20 +50,22 @@ input[placeholder] {
     text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
 }
 #button2{
+	background-image: url('../img/titre-princess.jpg');
     background-color:#efb9e9;
     color:white;
     text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
 }
 
 #button3{
+	background-image: url('../img/titre-animaux.jpg');
     background-color:#badcac;
     color:white;
     text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
 }
 
 #button4{
+	background-image: url('../img/titre-enfants.jpg');
     background-color:#f2ef83;
-    background-repeat:inherit;
     color:white;
     text-shadow:1px 1px 1px #1f1e1e,1px 0px 0px #1f1e1e,0px 1px 0px #1f1e1e,0px 1px 0px #1f1e1e;
 }
@@ -77,6 +79,7 @@ input[placeholder] {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+	margin: 0!important;
 }
 
 /***************************

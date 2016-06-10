@@ -43,3 +43,4 @@ angular.module('starter.controllers', [])
 	  $scope.init();
 
 	});
+
