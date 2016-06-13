@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
@@ -39,27 +40,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // setup an abstract state for the tabs directive
     .state('video', {
-    url: '/video?id',
+    	url: '/video?id',
         templateUrl: 'Templates/video.html',
         controller:'VideoCtrl'
 
-  })
-      .state('accueil', {
-          url: '/accueil',
-          templateUrl: 'Templates/accueil.html'
+  	})
+    .state('favorie', {
+    	url: 'favorie',
+        templateUrl: 'Templates/favorie.html'
 
-      })
+  	})  
+    .state('accueil', {
+        url: '/accueil',
+        templateUrl: 'Templates/accueil.html',
+	  	controller:'AccueilCtrl'
 
-      .state('restult',{
-        url: '/restult?tag',
-        templateUrl:'templates/restult.html',
+    })
+    .state('restult',{
+        url: '/restult',
+        templateUrl:'Templates/restult.html',
 	  
-      })
-      .state('categorie',{
-          url:'/categorie/:tag',
-          templateUrl:'Templates/categorie.html',
-	  		controller:'CategorieCtrl'
-      })
+    })
+    .state('categorie',{
+        url:'/categorie/:tag',
+        templateUrl:'Templates/categorie.html',
+ 		controller:'CategorieCtrl'
+    })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/accueil');
 

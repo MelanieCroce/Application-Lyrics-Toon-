@@ -1,18 +1,15 @@
 
 <ion-view>
     <ion-content>
-        <div class="row" ng-model="videos.video">
-			<div ng-bind-html="mail.htmlbody"></div>
-            <div class="">
-                    <iframe ng-src="{{ videos.url | trustAsResourceUrl }}" frameborder="0" class="video"></iframe>
-		
-            </div>
-        </div>
-        <div class="title">
-            <p>{{videos.title}}</p>
-        </div>
-        <div class="lyrics">
-            <pre>{{ videos.lyric }}</pre>
-        </div>
+		<div ng-model="videos">
+        	<div class="row">
+				<iframe ng-src="{{ videos.url | trustAsResourceUrl }}" frameborder="0" class="video"></iframe>
+			</div>
+        	<h1 class="title" style="background-color: #{{ color }}">{{videos.title}}</h1>
+			<button class="button button-light button-fav" style="color: {{ favcolor }};" ng-click="createFav()"><i class="icon ion-star"></i></button>
+        	<div class="lyrics">
+           		 <pre>{{ videos.lyric }}</pre>
+        	</div>
+		</div>
     </ion-content>
 </ion-view>

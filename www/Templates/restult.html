@@ -2,17 +2,18 @@
     <ion-content>
 		<div class="col-sm-6 col-sm-offset-3">
 				<div>
-				<ul class="list-group">
-					<li class="list-group-item" ng-repeat="videos in videos">
-						<h5 class="titre-cat"><a href="/#/video?id={{ videos.id }}">{{ videos.title }}</a></h5>
-						<img src="{{ videos.id }}.jpg" />
-					</li>
-				</ul>
-				<div class="alert alert-danger" ng-if="videos.error">
-					<strong>There was an error: </strong> {{video.error}}
-					<br>Please go back and login again...
+					<ul class="list-group" >
+						<li class="list-group-item" ng-repeat="videos in videos | filter:query ">
+							<h5 class="titre-cat"><a ui-sref="video({ id: videos.id })">{{ videos.title }}</a></h5>
+							<a ui-sref="video({ id: videos.id })"><img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" /></a>
+						</li>
+					</ul>
+					
+					<div class="alert alert-danger" ng-if="videos.error">
+						<strong>There was an error: </strong> {{video.error}}
+						<br>Please go back and login again...
+					</div>
 				</div>
-			</div>
 		</div>
     </ion-content>
 </ion-view>

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.myapp564755" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>myApp</name>
+  <name>Lyrics Toon</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Retrouvez dans une application toutes vos chansons disney préférés !
     </description>
-  <author email="you@example.com" href="http://example.com.com/">
-      Your Name Here
+  <author email="melanie.kimel.croce@gmail.com" href="http://melanie-croce.fr/">
+      Croce Mélanie - Duménil Lou
     </author>
   <content src="index.html"/>
   <access origin="*"/>
+	<allow-navigation href="https://www.youtube.com/*" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -66,6 +67,5 @@
     <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
-
   </platform>
 </widget>
