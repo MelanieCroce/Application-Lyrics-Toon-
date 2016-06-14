@@ -23,8 +23,10 @@ angular.module('starter.controllers', ['ui.router'])
 
  .controller('VideoCtrl', function($scope, $http, $stateParams, $sce) {
 	$scope.videos = [];
+	$scope.favs;
 	$scope.error;
 	$scope.video;
+	$scope.videosId;
 	$scope.message = "nothing";
 	$scope.lastpage=1;
 	
@@ -36,6 +38,7 @@ angular.module('starter.controllers', ['ui.router'])
             method: "GET",
         }).success(function(videos) {
 			$scope.videos = videos;
+			$scope.videosId = videos.id;
 			$scope.videoUrl = $sce.trustAsResourceUrl(videos.url);
             $scope.currentpage = videos.current_page;
 			$scope.tag = videos.tag;
@@ -51,23 +54,50 @@ angular.module('starter.controllers', ['ui.router'])
 				   	if ($scope.tag == 'enfant' || $scope.tag == 'Enfant') {
 						$scope.color = '9ecbce';
 					}	
-			   	console.log(videos.tag)
 		});
+		$http({
+			url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/fav',
+            method: "GET",
+        }).success(function(fav) {
+			for( var i = 0; i <= fav.length; i ++ ) { 
+				if ( $scope.videosId == fav[i].id_videos) { 
+					$scope.favcolor = 'white';
+				}
+			}
+		});	
 	}
 	
 	$scope.init();
 	$scope.insert = function() {
-        $http.post('http://melanie-croce.fr/projets/app-back/public/api/v1/fav/store', {
-		id_videos : 2,
-		headers : {
-                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-            }
-		}).success(function(response) {
-			$scope.favcolor = 'white';
-        }).error(function(){
-          console.log("error");
-        });
+		var temp;
+		$http({
+			url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/fav',
+            method: "GET",
+        }).success(function(fav) {
+			for( var i = 0; i <= fav.length; i ++ ) { 
+				if ( $scope.videosId == fav[i].id_videos) { 
+					temp = 1;
+				}
+				temp = 0;
+			}
+		});	
+		if (temp = 0) {
+			console.log('erreur');
+		}
+		else {
+					$http.get('http://melanie-croce.fr/projets/app-back/public/api/v1/fav/store/' + $scope.videosId).success(function(response) {
+						$scope.favcolor = 'white';
+					}).error(function(){
+					  console.log("error");
+					});	
+		}
     };
+	$scope.delete = function() {
+		$http.delete('http://melanie-croce.fr/projets/app-back/public/api/v1/fav/destroy' + $scope.videosId)
+			  .success(function() {
+				  console.log('fait');
+			  });
+		};
 })
 
 .filter('trustAsResourceUrl', ['$sce', function($sce) {
@@ -137,8 +167,8 @@ angular.module('starter.controllers', ['ui.router'])
 	$scope.videos = [];
 	$scope.init = function() {
 	  $http.get('http://melanie-croce.fr/projets/app-back/public/api/v1/fav').success(function(videos){    
-		console.log(videos);
 		$scope.videos = videos;
+		  console.log(videos[1]);
 		}).error(function(error){
 		  $scope.error = error;
 		}) 

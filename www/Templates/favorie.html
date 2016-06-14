@@ -2,15 +2,18 @@
     <ion-content>
 		<div class="col-sm-6 col-sm-offset-3">
 				<div>
-					<h1 id="accueil">Vos favories</h1>	
-					<ul class="list-group">
+					<h1 id="accueil" style="background-color: #4b6e95">Vos favories</h1>	
+					<ul class="list-group" style="background-color: #4b6e95">
 						<li class="list-group-item" ng-repeat="videos in videos">
-							<h5 class="titre-cat">
-								<a ui-sref="video({ id: videos.id })">{{ videos.title }}</a>
-							</h5>
-							<a ui-sref="video({ id: videos.id })">
-								<img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" />
-							</a>
+							<div on-swipe-left="delete()">
+								<div class="titre-cat">
+								<h5><a ui-sref="video({ id: videos.id })">{{ videos.title }}</a></h5>
+								<h6>Film : {{ videos.movie }}</h6>
+							</div>
+								<a ui-sref="video({ id: videos.id })">
+									<img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" />
+								</a>
+							</div>
 						</li>		
 					</ul>
 				</div>
