@@ -5,11 +5,15 @@
 					<h1 id="accueil" style="background-color: #{{ color }}">{{ tag }}</h1>	
 					<ul class="list-group" style="background-color: #{{ color }}">
 						<li class="list-group-item" ng-repeat="videos in videos">
-							<div class="titre-cat">
-								<h5><a ui-sref="video({ id: videos.id })">{{ videos.title }}</a></h5>
-								<h6>Film : {{ videos.movie }}</h6>
-							</div>
-							<a ui-sref="video({ id: videos.id })"><img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" /></a>
+								<a ui-sref="video({ id: videos.id })">
+									<div>
+									<div class="titre-cat">
+										<h5>{{ videos.title }}</h5>
+										<h6>Film : {{ videos.movie }}</h6>
+									</div>
+									<img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" />
+									</div>
+								</a>
 						</li>
 					</ul>
 				</div>

@@ -21,6 +21,25 @@ angular.module('starter.controllers', ['ui.router'])
 
 	})
 
+.controller('AllvideosCtrl', function($scope,$http, $stateParams) {
+
+		$scope.videos = [];
+		$scope.error;
+		$scope.video;
+
+		$scope.init = function() {
+				   $http({
+						url: 'http://melanie-croce.fr/projets/app-back/public/api/v1/videos',
+						method: "GET",
+					}).success(function(videos) {
+						$scope.videos = videos;
+					});
+		}
+
+	  $scope.init();
+
+	})
+
  .controller('VideoCtrl', function($scope, $http, $stateParams, $sce) {
 	$scope.videos = [];
 	$scope.favs;

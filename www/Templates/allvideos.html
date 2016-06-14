@@ -1,10 +1,10 @@
 <ion-view>
     <ion-content>
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-6 col-sm-offset-3" ng-model="videos">
 				<div>
-					<h1 id="accueil" style="background-color: #4b6e95">Résultat</h1>
+					<h1 id="accueil" style="background-color: #4b6e95">Toutes les chansons</h1>	
 					<ul class="list-group" style="background-color: #4b6e95">
-							<li class="list-group-item" ng-repeat="videos in videos | filter:query ">
+						<li class="list-group-item" ng-repeat="videos in videos">
 								<a ui-sref="video({ id: videos.id })">
 									<div>
 									<div class="titre-cat">
@@ -14,13 +14,8 @@
 									<img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" />
 									</div>
 								</a>
-							</li>
+						</li>
 					</ul>
-					
-					<div class="alert alert-danger" ng-if="videos.error">
-						<strong>There was an error: </strong> {{video.error}}
-						<br>Please go back and login again...
-					</div>
 				</div>
 		</div>
     </ion-content>

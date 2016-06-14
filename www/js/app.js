@@ -6,8 +6,6 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-
-var db = null;
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
@@ -77,6 +75,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         templateUrl:'Templates/categorie.html',
  		controller:'CategorieCtrl'
     })
+  
+    .state('allvideos',{
+        url:'/allvideos',
+        templateUrl:'Templates/allvideos.html',
+ 		controller:'AllvideosCtrl'
+    })  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('accueil');
 

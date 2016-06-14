@@ -7,38 +7,39 @@
 
 
     <!-- compiled css output -->
-    <link href="css/ionic.app.css?ionicCachebuster=76715" rel="stylesheet">
+    <link href="css/ionic.app.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/font-awesome.min.css?ionicCachebuster=76715">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js?ionicCachebuster=76715"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
 	  
-	<script src="js/ng-cordova.min.js?ionicCachebuster=76715"></script>	  
+	<script src="js/ng-cordova.min.js"></script>	  
 	  
     <!-- cordova script (this will be a 404 during development) 
     <script src="cordova.js"></script>-->
 	  
-      <link rel="stylesheet" href="css/style.css?ionicCachebuster=76715">
+      <link rel="stylesheet" href="css/style.css">
 	  
 	  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 	  <link href="https://fonts.googleapis.com/css?family=Dancing%20Script" rel="stylesheet" type="text/css">
 
     <!-- your app's js -->
-    <script src="js/app.js?ionicCachebuster=76715"></script>
-    <script src="js/controllers.js?ionicCachebuster=76715"></script>
-    <script src="js/services.js?ionicCachebuster=76715"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
 	   
 	  
   </head>
   <body ng-controller="ResultCtrl" ng-app="starter">
 
 		<div id="bar" class="bar bar-header">
+			<button class="button_return ion-chevron-left" ng-click="$ionicGoBack()"><img src="img/mini-logo.png"></button>
 			<label class="item item-input bar-search">
 				<i class="icon ion-ios-search placeholder-icon"></i>
 				<input id="search" type="search" ng-model="query" placeholder="Rechercher une chanson">
 		  	</label>
-			<button class="button_return" ng-click="$ionicGoBack()"><img src="img/mini-logo.png"></button>
+			
 
 		</div>
 	  
