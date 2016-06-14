@@ -155,7 +155,19 @@ h1#accueil {
 .img-cat {
 	display: inline-block;
 	vertical-align: top;
-	width: 50%;	
+	width: 51%;	
+}
+
+.list-group li:first-of-type {
+	margin-top: 0!important;
+}
+
+
+.list-group li {
+    margin: 20px 0px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    background: white;
 }
 
 /***************************
@@ -196,6 +208,11 @@ h1#accueil {
 	text-align: center;
     padding: 5px 0px;
 	font-family: 'Raleway', sans-serif;
+}
+
+.titre_movie {
+	font-size: 1em;
+	margin-left: 5px;
 }
 
 .button-fav {

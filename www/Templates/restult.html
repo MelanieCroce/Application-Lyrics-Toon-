@@ -2,11 +2,17 @@
     <ion-content>
 		<div class="col-sm-6 col-sm-offset-3">
 				<div>
-					<ul class="list-group" >
-						<li class="list-group-item" ng-repeat="videos in videos | filter:query ">
-							<h5 class="titre-cat"><a ui-sref="video({ id: videos.id })">{{ videos.title }}</a></h5>
-							<a ui-sref="video({ id: videos.id })"><img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" /></a>
-						</li>
+					<h1 id="accueil" style="background-color: #4b6e95">Résultat</h1>
+					<ul class="list-group" style="background-color: #4b6e95">
+							<li class="list-group-item" ng-repeat="videos in videos | filter:query ">
+								<a ui-sref="video({ id: videos.id })">
+								<div class="titre-cat">
+									<h5>{{ videos.title }}</h5>
+									<h6>Film : {{ videos.movie }}</h6>
+								</div>
+								<img class="img-cat" src="http://melanie-croce.fr/projets/app-back/public/images/catalog/{{ videos.id }}.jpg" />
+								</a>
+							</li>
 					</ul>
 					
 					<div class="alert alert-danger" ng-if="videos.error">

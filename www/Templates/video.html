@@ -5,8 +5,10 @@
         	<div class="row">
 				<iframe ng-src="{{ videos.url | trustAsResourceUrl }}" frameborder="0" class="video"></iframe>
 			</div>
+			
         	<h1 class="title" style="background-color: #{{ color }}">{{videos.title}}</h1>
-			<button class="button button-light button-fav" style="color: {{ favcolor }};" ng-click="createFav()"><i class="icon ion-star"></i></button>
+			<button class="button button-light button-fav" style="color: {{ favcolor }};" ng-click="insert()"><i class="icon ion-star"></i></button>
+			<h2 class="titre_movie">Film : {{videos.movie}}</h2>
         	<div class="lyrics">
            		 <pre>{{ videos.lyric }}</pre>
         	</div>

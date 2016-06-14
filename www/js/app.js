@@ -6,27 +6,37 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
+
+var db = null;
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+	  $ionicPlatform.ready(function() {
+		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+		// for form inputs)
+		if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+		  cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+		  cordova.plugins.Keyboard.disableScroll(true);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+		}
+		if (window.StatusBar) {
+		  // org.apache.cordova.statusbar required
+		  StatusBar.styleDefault();
+		}
+		  
+	  });
+	 
 })
+/*.factory('Geolocation', ['$cordovaSQLite', function($cordovaSQLite) {
+	  db = cordovaSQLite.openDB("my.db");
+      cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS fav (id integer primary key, id_video int)");
+   
+}])*/
 
 .config(function ($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
 })
+
 
 .config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
 
@@ -47,7 +57,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   	})
     .state('favorie', {
     	url: 'favorie',
-        templateUrl: 'Templates/favorie.html'
+        templateUrl: 'Templates/favorie.html',
+	  	controller:'FavCtrl'
 
   	})  
     .state('accueil', {
@@ -67,7 +78,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
  		controller:'CategorieCtrl'
     })
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/accueil');
+  $urlRouterProvider.otherwise('accueil');
 
 });
 
